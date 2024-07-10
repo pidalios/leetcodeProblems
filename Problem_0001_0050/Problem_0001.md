@@ -24,6 +24,7 @@ public:
 
 ### Hash table
 * TC: $O(N)$
+* C++
 ```cpp
 class Solution {
 public:
@@ -40,4 +41,18 @@ public:
         return {};
     }
 };
+```
+* Python
+```python
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        table = {}
+        for i in range(0, len(nums)):
+            diff = target - nums[i]
+            if (table.get(diff) == None):
+                table[nums[i]] = i
+            else:
+                return [table[diff], i]
+        return []
+        
 ```
